@@ -1,0 +1,14 @@
+jenya@debian ~/github/docs/welcome-kube/nginx $ helm install nginx-helm ./nginx-helm
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/jenya/.kube/config
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /home/jenya/.kube/config
+NAME: nginx-helm
+LAST DEPLOYED: Sat May 25 18:34:41 2024
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services nginx-helm)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
